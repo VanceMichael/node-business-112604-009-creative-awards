@@ -1,0 +1,75 @@
+{
+  "synthetic": true,
+  "tracks": [
+    {
+      "id": "script",
+      "weights": {
+        "story": 60,
+        "feasibility": 40
+      },
+      "minReviews": 3
+    },
+    {
+      "id": "film",
+      "weights": {
+        "story": 40,
+        "craft": 60
+      },
+      "minReviews": 3
+    }
+  ],
+  "teams": [
+    {
+      "id": "team-a",
+      "members": [
+        "person-a",
+        "person-b"
+      ],
+      "leader": "person-a"
+    },
+    {
+      "id": "team-b",
+      "members": [
+        "person-c"
+      ],
+      "leader": "person-c"
+    }
+  ],
+  "judges": [
+    {
+      "id": "judge-a",
+      "conflictsWith": [
+        "person-b"
+      ]
+    },
+    {
+      "id": "judge-b",
+      "conflictsWith": []
+    },
+    {
+      "id": "judge-c",
+      "conflictsWith": []
+    },
+    {
+      "id": "judge-d",
+      "conflictsWith": []
+    }
+  ],
+  "benefits": [
+    {
+      "id": "compute",
+      "requires": "verifiedAccount",
+      "revocable": true
+    },
+    {
+      "id": "office",
+      "requires": "resident",
+      "revocable": true
+    },
+    {
+      "id": "purchase",
+      "requires": "signedContract",
+      "revocable": false
+    }
+  ]
+}

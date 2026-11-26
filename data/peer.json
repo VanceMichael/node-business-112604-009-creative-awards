@@ -1,0 +1,14 @@
+{
+  "name": "奖励合作方接收端",
+  "operations": [
+    "issue",
+    "revoke"
+  ],
+  "identity_fields": [
+    "requestId",
+    "benefitId",
+    "teamId",
+    "accountId"
+  ],
+  "facts": "issue 返回 grantId、accountId、issuedAt；revoke 引用 grantId，返回 revoked 或 irrevocable。HTTP 受理与实际发放独立，查询可以出现 pending。"
+}

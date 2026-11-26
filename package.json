@@ -1,0 +1,14 @@
+{
+  "name": "creative-awards",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "22.23.4"
+  },
+  "scripts": {
+    "peer": "node support/peer.mjs",
+    "check:data": "node support/check-data.mjs",
+    "test": "node --test"
+  }
+}

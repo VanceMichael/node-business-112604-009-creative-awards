@@ -1,0 +1,110 @@
+{
+  "synthetic": true,
+  "records": [
+    {
+      "recordId": "synthetic-01",
+      "kind": "submission",
+      "payload": {
+        "team": "team-a",
+        "track": "film",
+        "contentVersion": 1,
+        "rightsVersion": 1
+      }
+    },
+    {
+      "recordId": "synthetic-02",
+      "kind": "review",
+      "payload": {
+        "judge": "judge-a",
+        "team": "team-a",
+        "contentVersion": 1,
+        "scores": {
+          "story": 80,
+          "craft": 70
+        }
+      }
+    },
+    {
+      "recordId": "synthetic-03",
+      "kind": "review",
+      "payload": {
+        "judge": "judge-b",
+        "team": "team-a",
+        "contentVersion": 1,
+        "scores": {
+          "story": 70,
+          "craft": 80
+        }
+      }
+    },
+    {
+      "recordId": "synthetic-04",
+      "kind": "review",
+      "payload": {
+        "judge": "judge-c",
+        "team": "team-a",
+        "contentVersion": 1,
+        "scores": {
+          "story": 75,
+          "craft": 85
+        }
+      }
+    },
+    {
+      "recordId": "synthetic-05",
+      "kind": "publication",
+      "payload": {
+        "id": "public-1",
+        "teams": [
+          "team-a",
+          "team-b"
+        ]
+      }
+    },
+    {
+      "recordId": "synthetic-06",
+      "kind": "benefitAccepted",
+      "payload": {
+        "requestId": "issue-1",
+        "teamId": "team-a",
+        "benefitId": "compute",
+        "accountId": "account-a",
+        "grantId": "grant-1"
+      }
+    },
+    {
+      "recordId": "synthetic-07",
+      "kind": "objection",
+      "payload": {
+        "team": "team-a",
+        "reason": "回避关系补报",
+        "judge": "judge-a"
+      }
+    },
+    {
+      "recordId": "synthetic-08",
+      "kind": "leaderChange",
+      "payload": {
+        "team": "team-a",
+        "from": "person-a",
+        "to": "person-b"
+      }
+    },
+    {
+      "recordId": "synthetic-09",
+      "kind": "residentExit",
+      "payload": {
+        "team": "team-a"
+      }
+    },
+    {
+      "recordId": "synthetic-10",
+      "kind": "benefitResult",
+      "payload": {
+        "grantId": "grant-1",
+        "status": "issued",
+        "accountId": "account-a"
+      }
+    }
+  ]
+}
