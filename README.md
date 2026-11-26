@@ -20,9 +20,7 @@ npm run peer
 
 容器运行：
 ```sh
-docker compose up --build -d
-docker compose exec peer npm run check:data
-docker compose exec peer npm test
-docker compose down
+docker build -t creative-awards-local .
+docker run --rm -p 127.0.0.1:4300:4300 --mount type=volume,source=creative-awards-state,target=/home/node/state -e PEER_STATE=/home/node/state/requests.json creative-awards-local
 ```
-卷保存联调端流水，停止和重启容器不清除它。独立环境核查时可用 `docker run --rm` 在隔离容器内运行 `npm test`，临时目录会由测试自行清理。所有人物、证件、账户和业务编号均为合成值；不需要真实系统账号。
+命名卷保存联调端流水，停止和重启容器不清除它。另开终端可用 `docker run --rm creative-awards-local npm run check:data` 核查资料，用 `docker run --rm creative-awards-local npm test` 检查联调端，临时目录会由测试自行清理。所有人物、证件、账户和业务编号均为合成值；不需要真实系统账号。
