@@ -38,7 +38,7 @@ const server = http.createServer((request, response) => {
     if (request.method === 'GET' && url.pathname === '/health') return reply(response, 200, { name: config.name, ok: true });
     if (request.headers['x-peer-key'] !== 'local-synthetic-peer') return reply(response, 401, { error: '需要本地联调标识' });
     if (request.method === 'GET' && segments[0] === 'requests' && segments.length === 2) {
-      const item = state.requests[segments[1]];
+      const item = Object.hasOwn(state.requests, segments[1]) ? state.requests[segments[1]] : undefined;
       return reply(response, item ? 200 : 404, item || { error: '流水不存在' });
     }
     if (request.method === 'GET' && url.pathname === '/admin/requests') return reply(response, 200, Object.values(state.requests));
@@ -58,7 +58,7 @@ const server = http.createServer((request, response) => {
       if (!config.operations.includes(operation)) return reply(response, 404, { error: '操作不存在' });
       if (typeof body.requestId !== 'string' || !/^[\w.-]{1,100}$/.test(body.requestId)) return reply(response, 422, { error: '需要稳定流水号' });
       const digest = fingerprint({ operation, body });
-      const existing = state.requests[body.requestId];
+      const existing = Object.hasOwn(state.requests, body.requestId) ? state.requests[body.requestId] : undefined;
       if (existing) return reply(response, existing.digest === digest ? 200 : 409,
         existing.digest === digest ? existing : { error: '流水号已用于其他请求' });
       const plan = state.plans[body.requestId] || { mode: 'normal', result: { status: 'accepted' } };
